@@ -104,7 +104,7 @@ export class LgDateFieldComponent
   formGroupDirective: FormGroupDirective;
 
   constructor(
-    public fb: FormBuilder,
+    private fb: FormBuilder,
     private domService: LgDomService,
     private errorState: LgErrorStateMatcher,
     @Self()
