@@ -34,6 +34,7 @@ import { DateField } from './date-field.interface';
 
 import isValid from 'date-fns/isValid';
 import parseISO from 'date-fns/parseISO';
+import omit from '../../utils/omit';
 
 let nextUniqueId = 0;
 
@@ -42,17 +43,6 @@ const labelFieldMap = {
   month: 'month',
   year: 'year'
 };
-
-export function omit(obj: { [key: string]: any }, keyToRemove: string) {
-  if (!obj) {
-    return obj;
-  }
-  delete obj[keyToRemove];
-  if (Object.keys(obj).length === 0) {
-    return null;
-  }
-  return obj;
-}
 
 @Component({
   selector: 'lg-date-field',
