@@ -152,10 +152,6 @@ const date = new FormControl('', [futureDateValidator()])
  </lg-date-field>
 ~~~
 
-### Current limitations
-The date field will always behaved as a required field, this is due to certain complexities around when and if to validate a non required field. We can look to modify this behaviour in the future if it causes an issue.
-
-
 ## Using only the SCSS files
 
 Generate the markup as show in the example below.
