@@ -165,13 +165,13 @@ describe('TableComponent', () => {
     });
   });
 
-  describe('when the publish column has align set to start', () => {
+  describe('when the publish column has no alignment set', () => {
     beforeEach(() => {
       fixture = MockRender(`
       <table lg-table>
         <thead lg-table-head>
           <tr lg-table-row>
-            <th lg-table-head-cell [align]="alignPublishColumn">Title</th>
+            <th lg-table-head-cell>Title</th>
           </tr>
         </thead>
 
