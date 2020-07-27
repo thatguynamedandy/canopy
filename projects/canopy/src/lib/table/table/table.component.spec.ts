@@ -125,25 +125,9 @@ describe('TableComponent', () => {
 
   describe('when the publish column has align set to end', () => {
     beforeEach(() => {
-      fixture = MockRender(
-        `
-      <table lg-table>
-        <thead lg-table-head>
-          <tr lg-table-row>
-            <th lg-table-head-cell [align]="alignPublishColumn">Title</th>
-          </tr>
-        </thead>
-
-        <tbody lg-table-body>
-          <tr lg-table-row>
-            <td lg-table-cell>Accelerate: The Science of Lean Software and Devops</td>
-          </tr>
-        </tbody>
-      </table>`,
-        {
-          alignPublishColumn: AlignmentOptions.End,
-        },
-      );
+      fixture = MockRender(getAlignmentMockRender(), {
+        alignPublishColumn: AlignmentOptions.End,
+      });
       debugElement = fixture.debugElement;
       tableDebugElement = debugElement.query(By.directive(LgTableComponent));
       fixture.detectChanges();
@@ -159,4 +143,74 @@ describe('TableComponent', () => {
       ).toContain('lg-table-cell__content--align-end');
     });
   });
+
+  describe('when the publish column has align set to start', () => {
+    beforeEach(() => {
+      fixture = MockRender(getAlignmentMockRender(), {
+        alignPublishColumn: AlignmentOptions.Start,
+      });
+      debugElement = fixture.debugElement;
+      tableDebugElement = debugElement.query(By.directive(LgTableComponent));
+      fixture.detectChanges();
+    });
+
+    it('should not set the align end class on the cell ', () => {
+      const [titleCell] = tableDebugElement.queryAll(By.directive(LgTableCellComponent));
+
+      expect(
+        titleCell
+          .query(By.css('.lg-table-cell__content'))
+          .nativeElement.getAttribute('class'),
+      ).not.toContain('lg-table-cell__content--align-end');
+    });
+  });
+
+  describe('when the publish column has align set to start', () => {
+    beforeEach(() => {
+      fixture = MockRender(`
+      <table lg-table>
+        <thead lg-table-head>
+          <tr lg-table-row>
+            <th lg-table-head-cell [align]="alignPublishColumn">Title</th>
+          </tr>
+        </thead>
+
+        <tbody lg-table-body>
+          <tr lg-table-row>
+            <td lg-table-cell>Accelerate: The Science of Lean Software and Devops</td>
+          </tr>
+        </tbody>
+      </table>`);
+      debugElement = fixture.debugElement;
+      tableDebugElement = debugElement.query(By.directive(LgTableComponent));
+      fixture.detectChanges();
+    });
+
+    it('should not set the align end class on the cell ', () => {
+      const [titleCell] = tableDebugElement.queryAll(By.directive(LgTableCellComponent));
+
+      expect(
+        titleCell
+          .query(By.css('.lg-table-cell__content'))
+          .nativeElement.getAttribute('class'),
+      ).not.toContain('lg-table-cell__content--align-end');
+    });
+  });
+
+  function getAlignmentMockRender() {
+    return `
+    <table lg-table>
+      <thead lg-table-head>
+        <tr lg-table-row>
+          <th lg-table-head-cell [align]="alignPublishColumn">Title</th>
+        </tr>
+      </thead>
+
+      <tbody lg-table-body>
+        <tr lg-table-row>
+          <td lg-table-cell>Accelerate: The Science of Lean Software and Devops</td>
+        </tr>
+      </tbody>
+    </table>`;
+  }
 });

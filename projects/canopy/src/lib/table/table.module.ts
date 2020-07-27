@@ -2,8 +2,6 @@ import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 
 import { LgIconModule } from '../icon/icon.module';
-import { LgIconRegistry } from '../icon/icon.registry';
-import { lgIconChevronDown } from '../icon/icons.interface';
 import { LgTableBodyComponent } from './table-body/table-body.component';
 import { LgTableCellComponent } from './table-cell/table-cell.component';
 import { LgTableHeadCellComponent } from './table-head-cell/table-head-cell.component';
@@ -25,8 +23,4 @@ const components = [
   declarations: [...components],
   exports: [...components],
 })
-export class LgTableModule {
-  constructor(private iconRegistry: LgIconRegistry) {
-    this.iconRegistry.registerIcons([lgIconChevronDown]);
-  }
-}
+export class LgTableModule {}

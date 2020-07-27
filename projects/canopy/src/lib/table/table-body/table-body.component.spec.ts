@@ -21,4 +21,8 @@ describe('LgTableBodyComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
+  it('should have the table body class', () => {
+    expect(fixture.nativeElement.getAttribute('class')).toBe('lg-table-body');
+  });
 });
