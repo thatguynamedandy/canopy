@@ -34,7 +34,8 @@ export class LgTableComponent implements AfterViewChecked {
 
   private handleRows() {
     if (this.tableHead.length && this.tableBody.length) {
-      this.tableHead.first.headRows.first.headCells.forEach((cell, cellIndex) => {
+      const headCells = this.tableHead.first.headRows.first.headCells;
+      headCells.forEach((cell, cellIndex) => {
         this.columns.set(cellIndex, {
           align: cell.align,
           label: cell.element.nativeElement.innerHTML,

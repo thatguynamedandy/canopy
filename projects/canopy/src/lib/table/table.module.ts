@@ -1,7 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 
-import { LgIconModule } from '../icon/icon.module';
 import { LgTableBodyComponent } from './table-body/table-body.component';
 import { LgTableCellComponent } from './table-cell/table-cell.component';
 import { LgTableHeadCellComponent } from './table-head-cell/table-head-cell.component';
@@ -19,7 +18,7 @@ const components = [
 ];
 
 @NgModule({
-  imports: [CommonModule, LgIconModule],
+  imports: [CommonModule],
   declarations: [...components],
   exports: [...components],
 })
