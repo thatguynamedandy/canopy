@@ -7,7 +7,9 @@
     "ng": "ng",
     "start": "npm run storybook",
     "start:test-app": "ng serve",
-    "build": "ng build && npm run build-styles",
+    "build": "ng build && npm run build:styles && npm run build:scripts",
+    "build:scripts": "cp -r ./projects/canopy/scripts ./dist/canopy/scripts",
+    "build:styles": "webpack --config webpack.global.config.js",
     "build:test-app": "npm run build && ng build canopy-test-app --prod --outputPath ./test-dist",
     "build:icons": "npm run optimise:svgs && npm run generate:icons && npm run generate:brand-icons",
     "generate:icons": "svg-to-ts -c constants -s **/src/assets/icons/*.svg -o projects/canopy/src/lib/icon -f icons.interface -p lgIcon -t IconName -i Icon -d KEBAB --svgoConfig svgo-icons.json && node svg-info.ts icon/icons.interface.ts",
@@ -22,8 +24,8 @@
     "e2e": "ng e2e",
     "storybook": "start-storybook",
     "stylelint": "stylelint \"projects/**/*.scss\"",
-    "build-storybook": "build-storybook --quiet",
-    "build-styles": "webpack --config webpack.global.config.js"
+    "build-storybook": "build-storybook --quiet"
+
   },
   "engines": {
     "node": ">=12.13.0"

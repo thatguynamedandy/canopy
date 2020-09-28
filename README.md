@@ -1,3 +1,11 @@
+## DEPRECATED ⚠️
+
+This repository is in the process of being deprecated in favour of https://github.com/Legal-and-General/canopy. Only business critical updates will be made to this repository in the future.
+
+The new repository is the same code, with a few differences.
+- It uses Angular 10 and you may need to update your project
+- It is open source and any access challenges should be removed
+
 # Canopy
 
 Interested in [contributing](./CONTRIBUTING.md)?

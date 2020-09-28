@@ -13,6 +13,9 @@
   "publishConfig": {
     "registry": "https://npm.pkg.github.com/"
   },
+  "scripts": {
+    "postinstall": "node scripts/postinstall.js"
+  },
   "main": "bundles/canopy.umd.js",
   "module": "fesm5/canopy.js",
   "es2015": "fesm2015/canopy.js",
