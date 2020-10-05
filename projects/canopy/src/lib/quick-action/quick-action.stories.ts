@@ -78,7 +78,7 @@ export const link = () => ({
   `,
   props: {
     content: text('text', 'Send us a message', groupId),
-    link: text('link', '/mailbox', groupId),
+    link: text('link', 'https://google.com', groupId),
     target: select('target', ['_blank', '_self'], '_blank', groupId),
     icon: select('icon', iconsArray.map(icon => icon.name), 'secure-messaging', groupId),
   },
