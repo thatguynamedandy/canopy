@@ -37,6 +37,7 @@ export class AppComponent {
       select: [''],
       radio: [''],
       filter: [''],
+      colors: this.fb.control([]),
       checkbox: [''],
       switch: [''],
       date: [''],
