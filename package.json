@@ -55,6 +55,7 @@
     "@angular/cli": "^10.0.6",
     "@angular/compiler-cli": "^10.0.10",
     "@angular/language-service": "^10.0.10",
+    "@applitools/eyes-storybook": "^3.9.0",
     "@babel/core": "^7.11.1",
     "@commitlint/cli": "^9.1.2",
     "@commitlint/config-angular": "^9.1.2",
