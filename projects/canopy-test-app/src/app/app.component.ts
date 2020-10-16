@@ -36,6 +36,7 @@ export class AppComponent {
       text: [''],
       select: [''],
       radio: [''],
+      filter: [''],
       checkbox: [''],
       switch: [''],
       date: [''],
