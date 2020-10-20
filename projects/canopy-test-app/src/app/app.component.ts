@@ -38,6 +38,7 @@ export class AppComponent {
       radio: [''],
       filter: [''],
       colors: this.fb.control([]),
+      filters: this.fb.control([]),
       checkbox: [''],
       switch: [''],
       date: [''],
