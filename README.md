@@ -1,6 +1,6 @@
 ## DEPRECATED ⚠️
 
-This repository is in the process of being deprecated in favour of https://github.com/Legal-and-General/canopy. Only business critical updates will be made to this repository in the future.
+This repository is now deprecated please migrate to https://github.com/Legal-and-General/canopy. 
 
 The new repository is the same code, with a few differences.
 - It uses Angular 10 and you may need to update your project
